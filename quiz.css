@@ -1,0 +1,8 @@
+.addBorder {
+  border: 5px solid;
+}
+
+.altBorder {
+  background-color: tomato;
+  border: 5px solid;
+}
