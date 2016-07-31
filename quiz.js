@@ -4,8 +4,7 @@ function populatePage (inventory) {
   for (var i = 0; i < inventory.length; i++) {
     addToDisplayCars.innerHTML += `
     <div id="${inventory[i].model.replace(" ", "")}" class="col-md-4 addBorder" style="border-color: ${inventory[i].color}">
-        <h1>${inventory[i].make}</h1>
-            <p class= "list-unstyled">${inventory[i].model}</p>
+        <h1>${inventory[i].make} ${inventory[i].model}</h1>
             <p class= "list-unstyled">${inventory[i].year}</p>
             <p class= "list-unstyled">${inventory[i].price}</p>
             <p class= "list-unstyled">${inventory[i].color}</p>
@@ -14,15 +13,22 @@ function populatePage (inventory) {
     </div>
     `
   }
-    function activateEvents (inventory) {
-      addToDisplayCars.addEventListener("click", changeBorderAndBackground) {
-        for (var i = 0; i < inventory.length; i++) {
-          `${inventory[i]}.classList.add("altBorder")`
-        }
-      }
+
+  var carElement = document.getElementById(`${inventory[0].model.replace(" ", "")}`)
+  console.log(`${inventory[0].model.replace(" ", "")}`);
+  carElement.addEventListener("click", ChangeBorderAndBackground(event));
+
+  function ChangeBorderAndBackground (event) {
+    console.log("event", event);
+    if (event.target.classList = "addBorder") {
+      event.target.class = "altBorder";
+    } else {
+      event.target.class = "addBorder";
     }
-    CarLot.activateEvents();
   }
+
+        // CarLot.activateEvents();
+}
 
 
 

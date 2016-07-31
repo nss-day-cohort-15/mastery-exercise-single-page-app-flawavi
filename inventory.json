@@ -29,7 +29,7 @@
     },
     {
       "make": "Ford",
-      "model": "F150",
+      "model": "F-150",
       "year": "1995",
       "price": "5,000",
       "color": "Red",
@@ -38,7 +38,7 @@
     },
     {
       "make": "Batmobile",
-      "model": "Dark Knight",
+      "model": "",
       "year": "2008",
       "price": "250,000",
       "color": "Flat Black",
@@ -47,7 +47,7 @@
     },
     {
       "make": "Ecto-1",
-      "model": "Don't make me repeat myself",
+      "model": "",
       "year": "1984",
       "price": "100,000",
       "color": "White",
