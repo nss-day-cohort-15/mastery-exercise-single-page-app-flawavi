@@ -2,7 +2,7 @@
   "cars": [
     {
       "make": "Tesla",
-      "model": "Model X",
+      "model": "ModelX",
       "year": "2017",
       "price": "100,000",
       "color": "Gold",
@@ -33,12 +33,12 @@
       "year": "1995",
       "price": "5,000",
       "color": "Red",
-      "purchased": true,
+      "purchased": false,
       "description": "Feeling less like a man? Buy this fucking truck."
     },
     {
       "make": "Batmobile",
-      "model": "",
+      "model": "DK",
       "year": "2008",
       "price": "250,000",
       "color": "Flat Black",
@@ -47,7 +47,7 @@
     },
     {
       "make": "Ecto-1",
-      "model": "",
+      "model": "GB",
       "year": "1984",
       "price": "100,000",
       "color": "White",

@@ -1,37 +1,51 @@
-function populatePage (inventory) {
+function populatePage () {
   // Loop over the inventory and populate the page
-  var addToDisplayCars = document.getElementById("displayCars")
-  for (var i = 0; i < inventory.length; i++) {
-    addToDisplayCars.innerHTML += `
-    <div id="${inventory[i].model.replace(" ", "")}" class="col-md-4 addBorder" style="border-color: ${inventory[i].color}">
+  var inventory = CarLot.getInventory();
+
+  for (let i = 0; i < inventory.length; i++) {
+    var addToDom = document.getElementById("displayCars")
+    addToDom.innerHTML += `
+    <div id="${inventory[i].model}" class="col-md-4 addBorder" style="border-color: ${inventory[i].color}">
         <h1>${inventory[i].make} ${inventory[i].model}</h1>
             <p class= "list-unstyled">${inventory[i].year}</p>
             <p class= "list-unstyled">${inventory[i].price}</p>
             <p class= "list-unstyled">${inventory[i].color}</p>
             <p class= "list-unstyled">${inventory[i].purchased}</p>
             <p class= "list-unstyled">${inventory[i].description}</p>
-    </div>
-    `
+    </div>`
+
+  }
+  for(let i = 0; i < inventory.length; i++) {
+    var carElement = document.getElementById(`${inventory[i].model}`);
+    carElement.addEventListener("click", ChangeBorderAndBackground);
   }
 
-  var carElement = document.getElementById(`${inventory[0].model.replace(" ", "")}`)
-  console.log(`${inventory[0].model.replace(" ", "")}`);
-  carElement.addEventListener("click", ChangeBorderAndBackground(event));
 
   function ChangeBorderAndBackground (event) {
-    console.log("event", event);
-    if (event.target.classList = "addBorder") {
-      event.target.class = "altBorder";
-    } else {
-      event.target.class = "addBorder";
+    console.log(event.target.classList)
+    console.dir(event.target)
+    // check to see if targeted div doesn't have a class of "addBorder",
+    if (event.target.classList === "addBorder") {
+      event.target.classList = "altBorder";
+    } else if (event.target.classList !== "addBorder") {
+      event.target.parentElement.classList = "altBorder";
     }
+    // if (event.target.classList === "addBorder") {
+    //   event.target.parentNode.class = "altBorder";
+    //   console.dir(event.target.parentNode)
+    // } else if (event.target.classList !== "addBorder") {
+    //   event.target.parentNode.class = "altBorder";
+    // }
   }
 
         // CarLot.activateEvents();
 }
 
+function activateEvents() {
+  populatePage();
+}
 
 
 // Load the inventory and send a callback function to be
 // invoked after the process is complete
-CarLot.loadInventory(populatePage);
+CarLot.loadInventory(activateEvents);
