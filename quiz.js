@@ -6,23 +6,20 @@ function populatePage () {
     var addToDom = document.getElementById("displayCars")
     addToDom.innerHTML += `
     <div id="${inventory[i].model}" class="col-sm-4 borderToggle" style="border: 5px solid ${inventory[i].color}">
-        <h1>${inventory[i].make} ${inventory[i].model}</h1>
+        <h1 style="width: 100%">${inventory[i].make} ${inventory[i].model}</h1>
             <p class= "list-unstyled">${inventory[i].year}</p>
             <p class= "list-unstyled">${inventory[i].price}</p>
             <p class= "list-unstyled">${inventory[i].color}</p>
             <p class= "list-unstyled">${inventory[i].purchased}</p>
-            <p class= "list-unstyled">${inventory[i].description}</p>
+            <p class= "list-unstyled description">${inventory[i].description}</p>
     </div>`
 
   }
+
   for(var i = 0; i < inventory.length; i++) {
     var carElement = document.getElementById(`${inventory[i].model}`);
     carElement.addEventListener("click", ChangeBorderAndBackground);
   }
-  var textInput = document.getElementById('elementid')
-  textInput.addEventListener("click", clearAndFocus)
-
-
 
   function ChangeBorderAndBackground (event) {
     console.log(event.target.classList)
@@ -32,15 +29,29 @@ function populatePage () {
       event.target.classList = "altBorder col-sm-4";
     } else if (event.target.classList !== "addBorder") {
       event.target.parentElement.classList = "altBorder col-sm-4";
-      consle.dir(event.target.parentElement);
+      console.dir(event.target.parentElement);
     }
   }
 
-  function clearAndFocus () {
-    if (event.target.id === "text")
-      textInput.value = "";
+    var textInput = document.getElementById("text")
+    textInput.addEventListener("click", clearAndFocus)
+
+    function clearAndFocus (event) {
+    if (event.target.classList === "borderToggle") {
       textInput.focus;
-  }
+      textInput.value = "";
+      }
+    }
+
+    var description = document.getElementById("text");
+    description.addEventListener("keyup", newDescription)
+
+    function newDescription (event) {
+    document.getElementsByClassName("description").innerHTML = textInput.value;
+    }
+
+
+
 
         // CarLot.activateEvents();
 }

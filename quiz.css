@@ -1,6 +1,7 @@
 .altBorder {
   background-color: lightyellow;
   border: 15px solid;
+  border-radius: 5%;
   width: 30%;
   height: 300px;
   margin: 5px;
