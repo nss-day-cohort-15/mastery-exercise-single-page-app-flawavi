@@ -1,4 +1,7 @@
 .altBorder {
-  background-color: tomato;
+  background-color: lightyellow;
   border: 15px solid;
+  width: 30%;
+  height: 300px;
+  margin: 5px;
 }
