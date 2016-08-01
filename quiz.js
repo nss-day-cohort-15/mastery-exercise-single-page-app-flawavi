@@ -11,7 +11,7 @@ function populatePage () {
             <p class= "list-unstyled">${inventory[i].price}</p>
             <p class= "list-unstyled">${inventory[i].color}</p>
             <p class= "list-unstyled">${inventory[i].purchased}</p>
-            <p class= "list-unstyled description">${inventory[i].description}</p>
+            <p class= "list-unstyled" id="description">${inventory[i].description}</p>
     </div>`
 
   }
@@ -44,14 +44,9 @@ function populatePage () {
     }
 
     var description = document.getElementById("text");
-    description.addEventListener("keyup", newDescription)
-
-    function newDescription (event) {
-    document.getElementsByClassName("description").innerHTML = textInput.value;
-    }
-
-
-
+    description.addEventListener("keyup", function (event) {
+    document.getElementById("description").innerHTML = event.target.value;
+    });
 
         // CarLot.activateEvents();
 }
