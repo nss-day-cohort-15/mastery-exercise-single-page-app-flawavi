@@ -7,12 +7,12 @@ function populatePage () {
   for (var i = 0; i < inventory.length; i++) {
     var addToDom = document.getElementById("displayCars")
     addToDom.innerHTML += `
-      <div id="${inventory[i].model}" class="col-sm-4 borderToggle carCard" style="border: 5px solid ${inventory[i].color}">
+      <div id="${inventory[i].model}" class="col-sm-4 borderToggle carCard" style="border-color: ${inventory[i].color}">
         <h1 style="width: 100%">${inventory[i].make} ${inventory[i].model}</h1>
-        <p class= "list-unstyled">${inventory[i].year}</p>
-        <p class= "list-unstyled">${inventory[i].price}</p>
-        <p class= "list-unstyled">${inventory[i].color}</p>
-        <p class= "list-unstyled">${inventory[i].purchased}</p>
+        <p class= "list-unstyled year">${inventory[i].year}</p>
+        <p class= "list-unstyled price">${inventory[i].price}</p>
+        <p class= "list-unstyled color">${inventory[i].color}</p>
+        <p class= "list-unstyled purchased">${inventory[i].purchased}</p>
         <p class= "list-unstyled description">${inventory[i].description}</p>
       </div>
     `;
@@ -29,12 +29,12 @@ function populatePage () {
   }
 
   function toggleBorderAndBackground (event) {
+    var carCard = event.target;
     textInput.disabled = false;
     resetCarCards();
     clearAndFocus();
     bindText();
-    var carCard = event.target;
-    carCard.parentElement.className = "altBorder col-sm-4 carCard";
+    carCard.parentElement.classList = "altBorder col-sm-4 carCard";
   }
 
   function resetCarCards () {

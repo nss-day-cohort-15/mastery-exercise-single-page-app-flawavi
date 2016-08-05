@@ -6,4 +6,5 @@
 
 .borderToggle {
   border-radius: 5%;
+  border: 5px solid;
 }
