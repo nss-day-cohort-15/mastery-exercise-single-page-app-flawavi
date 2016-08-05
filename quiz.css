@@ -1,8 +1,9 @@
 .altBorder {
-  background-color: lightyellow;
+  background-color: powderblue;
   border: 15px solid;
   border-radius: 5%;
-  width: 30%;
-  height: 300px;
-  margin: 5px;
+}
+
+.borderToggle {
+  border-radius: 5%;
 }

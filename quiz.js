@@ -1,11 +1,13 @@
+
 function populatePage () {
-  // Loop over the inventory and populate the page
+  var textInput = document.getElementById("text");
+  var carCard = document.getElementsByClassName("carCard");
   var inventory = CarLot.getInventory();
 
   for (var i = 0; i < inventory.length; i++) {
     var addToDom = document.getElementById("displayCars")
     addToDom.innerHTML += `
-      <div id="${inventory[i].model}" class="col-sm-4 borderToggle" style="border: 5px solid ${inventory[i].color}">
+      <div id="${inventory[i].model}" class="col-sm-4 borderToggle carCard" style="border: 5px solid ${inventory[i].color}">
         <h1 style="width: 100%">${inventory[i].make} ${inventory[i].model}</h1>
         <p class= "list-unstyled">${inventory[i].year}</p>
         <p class= "list-unstyled">${inventory[i].price}</p>
@@ -14,50 +16,38 @@ function populatePage () {
         <p class= "list-unstyled description">${inventory[i].description}</p>
       </div>
     `;
+  }
 
-    var description = document.getElementById("text");
-
-    description.addEventListener("keyup", function (event) {
+  function bindText (){
+    textInput.addEventListener("keyup", function (event) {
       document.querySelector('.altBorder .description').innerHTML = event.target.value;
     });
   }
-
   for(var i = 0; i < inventory.length; i++) {
     var carElement = document.getElementById(`${inventory[i].model}`);
-    carElement.addEventListener("click", ChangeBorderAndBackground);
+    carElement.addEventListener("click", toggleBorderAndBackground);
   }
 
-  function ChangeBorderAndBackground (event) {
-    console.log(event.target.classList)
-    console.dir(event.target)
-    // check to see if targeted div doesn't have a class of "addBorder",
-    if (event.target.classList === "borderToggle") {
-      event.target.classList = "altBorder col-sm-4";
-    } else if (event.target.classList !== "addBorder") {
-      event.target.parentElement.classList = "altBorder col-sm-4";
-      console.dir(event.target.parentElement);
+  function toggleBorderAndBackground (event) {
+    textInput.disabled = false;
+    resetCarCards();
+    clearAndFocus();
+    bindText();
+    var carCard = event.target;
+    carCard.parentElement.className = "altBorder col-sm-4 carCard";
+  }
+
+  function resetCarCards () {
+    for (var i = 0; i < carCard.length; i++) {
+      carCard[i].className = "borderToggle col-sm-4 carCard"
     }
   }
 
-    var textInput = document.getElementById("text")
-    textInput.addEventListener("click", clearAndFocus)
-    function clearAndFocus (event) {
-    if (event.target.classList === "borderToggle") {
-      textInput.focus;
+    function clearAndFocus () {
+      textInput.focus();
       textInput.value = "";
-      }
     }
 
-
-
-        // CarLot.activateEvents();
 }
 
-function activateEvents() {
-  populatePage();
-}
-
-
-// Load the inventory and send a callback function to be
-// invoked after the process is complete
-CarLot.loadInventory(activateEvents);
+CarLot.loadInventory(populatePage);
