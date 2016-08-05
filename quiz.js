@@ -1,4 +1,3 @@
-
 function populatePage () {
   var textInput = document.getElementById("text");
   var carCard = document.getElementsByClassName("carCard");
@@ -8,7 +7,7 @@ function populatePage () {
     var addToDom = document.getElementById("displayCars")
     addToDom.innerHTML += `
       <div id="${inventory[i].model}" class="col-sm-4 borderToggle carCard" style="border-color: ${inventory[i].color}">
-        <h1 style="width: 100%">${inventory[i].make} ${inventory[i].model}</h1>
+        <h1 class="makeModel">${inventory[i].make} ${inventory[i].model}</h1>
         <p class= "list-unstyled year">${inventory[i].year}</p>
         <p class= "list-unstyled price">${inventory[i].price}</p>
         <p class= "list-unstyled color">${inventory[i].color}</p>
