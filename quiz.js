@@ -5,15 +5,21 @@ function populatePage () {
   for (var i = 0; i < inventory.length; i++) {
     var addToDom = document.getElementById("displayCars")
     addToDom.innerHTML += `
-    <div id="${inventory[i].model}" class="col-sm-4 borderToggle" style="border: 5px solid ${inventory[i].color}">
+      <div id="${inventory[i].model}" class="col-sm-4 borderToggle" style="border: 5px solid ${inventory[i].color}">
         <h1 style="width: 100%">${inventory[i].make} ${inventory[i].model}</h1>
-            <p class= "list-unstyled">${inventory[i].year}</p>
-            <p class= "list-unstyled">${inventory[i].price}</p>
-            <p class= "list-unstyled">${inventory[i].color}</p>
-            <p class= "list-unstyled">${inventory[i].purchased}</p>
-            <p class= "list-unstyled" id="description">${inventory[i].description}</p>
-    </div>`
+        <p class= "list-unstyled">${inventory[i].year}</p>
+        <p class= "list-unstyled">${inventory[i].price}</p>
+        <p class= "list-unstyled">${inventory[i].color}</p>
+        <p class= "list-unstyled">${inventory[i].purchased}</p>
+        <p class= "list-unstyled description">${inventory[i].description}</p>
+      </div>
+    `;
 
+    var description = document.getElementById("text");
+
+    description.addEventListener("keyup", function (event) {
+      document.querySelector('.altBorder .description').innerHTML = event.target.value;
+    });
   }
 
   for(var i = 0; i < inventory.length; i++) {
@@ -35,7 +41,6 @@ function populatePage () {
 
     var textInput = document.getElementById("text")
     textInput.addEventListener("click", clearAndFocus)
-
     function clearAndFocus (event) {
     if (event.target.classList === "borderToggle") {
       textInput.focus;
@@ -43,10 +48,7 @@ function populatePage () {
       }
     }
 
-    var description = document.getElementById("text");
-    description.addEventListener("keyup", function (event) {
-    document.getElementById("description").innerHTML = event.target.value;
-    });
+
 
         // CarLot.activateEvents();
 }
