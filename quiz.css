@@ -1,0 +1,15 @@
+.altBorder {
+  background-color: azure;
+  border: 15px solid;
+  border-radius: 5%;
+}
+
+.borderToggle {
+  border-radius: 5%;
+  border: 5px solid;
+}
+
+.makeModel {
+  width: 100%;
+  font-size: 4vmax;
+}

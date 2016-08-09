@@ -1,0 +1,59 @@
+{
+  "cars": [
+    {
+      "make": "Tesla",
+      "model": "ModelX",
+      "year": "2017",
+      "price": "$100,000",
+      "color": "Gold",
+      "purchased": "",
+      "description": "For an extra $1M this car will pave its own road to Mars and destroy that road as it makes its journey."
+    },
+    {
+      "make": "VW",
+      "model": "Rabbit",
+      "year": "2009",
+      "price": "$7,300",
+      "color": "Silver",
+      "purchased": "",
+      "description": "This little guy can get in and out of turns like it was being chased by a fat hick with a belt made from his daddy's lucky rabbit's feet."
+    },
+    {
+      "make": "Acura",
+      "model": "Integra",
+      "year": "1990",
+      "price": "$1,000",
+      "color": "Teal",
+      "purchased": "",
+      "description": "Occoasionally the gear shift gets stuck in park, especially in the winter, but with juuuust the right amount of jiggling, it will pop out and you're good to GO!"
+    },
+    {
+      "make": "Ford",
+      "model": "F-250",
+      "year": "1995",
+      "price": "$5,000",
+      "color": "Orangered",
+      "purchased": "",
+      "description": "Feeling less like a man? Buy this fucking truck."
+    },
+    {
+      "make": "Batmobile",
+      "model": "DK",
+      "year": "2008",
+      "price": "$250,000",
+      "color": "Black",
+      "purchased": "",
+      "description": "Bad guys are bad. Make them feel bad by rolling up in this whip."
+    },
+    {
+      "make": "Ecto-1",
+      "model": "GB",
+      "year": "1984",
+      "price": "$100,000",
+      "color": "AntiqueWhite",
+      "purchased": "",
+      "description": "Just...dont' cross the streams."
+    }
+
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "name": "boilerplate-sscotth",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/index.html",
+  "scripts": {
+    "deploy": "gh-pages -d src",
+    "start": "http-server src",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nss-day-cohort-15/boilerplate-sscotth.git"
+  },
+  "keywords": [],
+  "author": "Scott Humphries <npm@sscotth.io> (https://sscotth.io/)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/nss-day-cohort-15/boilerplate-sscotth/issues"
+  },
+  "homepage": "https://github.com/nss-day-cohort-15/boilerplate-sscotth#readme",
+  "devDependencies": {
+    "gh-pages": "^0.11.0",
+    "grunt": "^1.0.1",
+    "grunt-contrib-jshint": "^1.0.0",
+    "http-server": "^0.9.0"
+  }
+}
